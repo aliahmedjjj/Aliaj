@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>واجهة طرفية متقدمة</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="edex-ui-container">
+        <header class="edex-ui-header">
+            <div class="logo">واجهة طرفية</div>
+            <div class="header-controls">
+                <div class="header-time" id="current-time">00:00:00</div>
+                <div class="header-buttons">
+                    <button class="header-button">الإعدادات</button>
+                    <button class="header-button">السمات</button>
+                    <button class="header-button">المساعدة</button>
+                </div>
+            </div>
+        </header>
+        
+        <div class="edex-ui-content">
+            <div class="left-panel">
+                <div class="system-monitor">
+                    <h2>مراقبة النظام</h2>
+                    <div class="monitor-section">
+                        <div class="monitor-label">وحدة المعالجة المركزية</div>
+                        <div class="monitor-bar-container">
+                            <div class="monitor-bar" id="cpu-bar"></div>
+                            <div class="monitor-value" id="cpu-value">0%</div>
+                        </div>
+                    </div>
+                    <div class="monitor-section">
+                        <div class="monitor-label">الذاكرة</div>
+                        <div class="monitor-bar-container">
+                            <div class="monitor-bar" id="memory-bar"></div>
+                            <div class="monitor-value" id="memory-value">0%</div>
+                        </div>
+                    </div>
+                    <div class="monitor-section">
+                        <div class="monitor-label">الشبكة</div>
+                        <div class="monitor-network">
+                            <div class="network-stat">
+                                <span class="network-icon upload">↑</span>
+                                <span class="network-value" id="upload-value">0 KB/s</span>
+                            </div>
+                            <div class="network-stat">
+                                <span class="network-icon download">↓</span>
+                                <span class="network-value" id="download-value">0 KB/s</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="file-explorer">
+                    <div class="file-explorer-header">
+                        <div class="current-path">/المنزل/المستخدم</div>
+                        <div class="file-controls">
+                            <button class="file-control-button">↑</button>
+                            <button class="file-control-button">↻</button>
+                            <button class="file-control-button">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="file-explorer-content">
+                        <div class="file-item">
+                            <span class="file-icon">📁</span>
+                            <span class="file-name">المستندات</span>
+                        </div>
+                        <div class="file-item">
+                            <span class="file-icon">📁</span>
+                            <span class="file-name">الصور</span>
+                        </div>
+                        <div class="file-item">
+                            <span class="file-icon">📁</span>
+                            <span class="file-name">البرامج</span>
+                        </div>
+                        <div class="file-item">
+                            <span class="file-icon">📄</span>
+                            <span class="file-name">ملف_مهم.txt</span>
+                            <span class="file-size">1 KB</span>
+                        </div>
+                        <div class="file-item">
+                            <span class="file-icon">🔧</span>
+                            <span class="file-name">بيانات.json</span>
+                            <span class="file-size">8 KB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="main-panel">
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <div class="terminal-title">الطرفية</div>
+                        <div class="terminal-controls">
+                            <button class="terminal-button minimize">_</button>
+                            <button class="terminal-button maximize">□</button>
+                            <button class="terminal-button close">×</button>
+                        </div>
+                    </div>
+                    <div class="terminal-content" id="terminal-content">
+                        <div class="terminal-line"><span class="green-text">الطرفية v1.0</span></div>
+                        <div class="terminal-line"><span class="blue-text">================================</span></div>
+                        <div class="terminal-line">النسخة المحسنة من الواجهة</div>
+                        <div class="terminal-line">مرحباً بك في المحطة الطرفية التفاعلية</div>
+                        <div class="terminal-line"><span class="yellow-text">اكتب "help" للحصول على المساعدة</span></div>
+                        <div class="terminal-line"></div>
+                        <div class="terminal-input-line">
+                            <span class="terminal-prompt">$ </span>
+                            <span class="terminal-input" id="terminal-input"></span>
+                            <span class="terminal-cursor"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="edex-ui-footer">
+            <div class="keyboard">
+                <div class="keyboard-header">
+                    <div class="keyboard-title">لوحة المفاتيح الافتراضية</div>
+                    <div class="keyboard-status">
+                        <div class="status-indicator">CAPS</div>
+                        <div class="status-indicator">SHIFT</div>
+                        <div class="status-indicator active">عربي</div>
+                    </div>
+                </div>
+                
+                <div class="keyboard-body">
+                    <div class="keyboard-row">
+                        <div class="keyboard-key">ذ</div>
+                        <div class="keyboard-key">١</div>
+                        <div class="keyboard-key">٢</div>
+                        <div class="keyboard-key">٣</div>
+                        <div class="keyboard-key">٤</div>
+                        <div class="keyboard-key">٥</div>
+                        <div class="keyboard-key">٦</div>
+                        <div class="keyboard-key">٧</div>
+                        <div class="keyboard-key">٨</div>
+                        <div class="keyboard-key">٩</div>
+                        <div class="keyboard-key">٠</div>
+                        <div class="keyboard-key">-</div>
+                        <div class="keyboard-key">=</div>
+                        <div class="keyboard-key key-bksp">⌫</div>
+                    </div>
+                    <div class="keyboard-row">
+                        <div class="keyboard-key key-tab">⇥</div>
+                        <div class="keyboard-key">ض</div>
+                        <div class="keyboard-key">ص</div>
+                        <div class="keyboard-key">ث</div>
+                        <div class="keyboard-key">ق</div>
+                        <div class="keyboard-key">ف</div>
+                        <div class="keyboard-key">غ</div>
+                        <div class="keyboard-key">ع</div>
+                        <div class="keyboard-key">ه</div>
+                        <div class="keyboard-key">خ</div>
+                        <div class="keyboard-key">ح</div>
+                        <div class="keyboard-key">ج</div>
+                        <div class="keyboard-key">د</div>
+                        <div class="keyboard-key">\</div>
+                    </div>
+                    <div class="keyboard-row">
+                        <div class="keyboard-key key-capslock">⇪</div>
+                        <div class="keyboard-key">ش</div>
+                        <div class="keyboard-key">س</div>
+                        <div class="keyboard-key">ي</div>
+                        <div class="keyboard-key">ب</div>
+                        <div class="keyboard-key">ل</div>
+                        <div class="keyboard-key">ا</div>
+                        <div class="keyboard-key">ت</div>
+                        <div class="keyboard-key">ن</div>
+                        <div class="keyboard-key">م</div>
+                        <div class="keyboard-key">ك</div>
+                        <div class="keyboard-key">ط</div>
+                        <div class="keyboard-key key-enter">↵</div>
+                    </div>
+                    <div class="keyboard-row">
+                        <div class="keyboard-key key-shift">⇧</div>
+                        <div class="keyboard-key">ئ</div>
+                        <div class="keyboard-key">ء</div>
+                        <div class="keyboard-key">ؤ</div>
+                        <div class="keyboard-key">ر</div>
+                        <div class="keyboard-key">لا</div>
+                        <div class="keyboard-key">ى</div>
+                        <div class="keyboard-key">ة</div>
+                        <div class="keyboard-key">و</div>
+                        <div class="keyboard-key">ز</div>
+                        <div class="keyboard-key">ظ</div>
+                        <div class="keyboard-key key-shift">⇧</div>
+                    </div>
+                    <div class="keyboard-row">
+                        <div class="keyboard-key key-layout">En</div>
+                        <div class="keyboard-key key-ctrl">Ctrl</div>
+                        <div class="keyboard-key key-alt">Alt</div>
+                        <div class="keyboard-key key-space"> </div>
+                        <div class="keyboard-key key-alt">Alt</div>
+                        <div class="keyboard-key key-ctrl">Ctrl</div>
+                        <div class="keyboard-key key-arrow">←</div>
+                        <div class="keyboard-key key-arrow">↑</div>
+                        <div class="keyboard-key key-arrow">↓</div>
+                        <div class="keyboard-key key-arrow">→</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
